@@ -1,0 +1,46 @@
+<html>
+  <body>
+    <textarea onkeyup="svg()" id="input"></textarea>
+    <label for="input">Input (JSON array of [clue, answer])</label>
+    <br>
+    <input    onkeyup="svg()" type="text" id="seed" value="0" />
+    <label for="seed">Seed:</label>
+    <h1>Crossword</h1>
+    <div id="output"></div>
+    <textarea id="output-raw"></textarea>
+    <h1>Legend</h1>
+    <textarea id="legend"></textarea>
+  </body>
+  <script src="index.js"></script>
+  <script>
+  function svg() {
+    var elem = document.getElementById("input");
+    var seed = document.getElementById("seed").value;
+    data = JSON.parse(elem.value);
+    let clues = [];
+    let answers = [];
+    for (let v of data) {
+      clues.push(v[0]);
+      answers.push(v[1]);
+    }
+    console.log(clues, answers, seed);
+    let output = document.getElementById("output");
+    try {
+      document.crossword = new Crossword(answers, clues, seed);
+      document.grid = document.crossword.getGrid(100);
+      var svg = CrosswordUtils.toSvg(document.grid);
+      var legend = document.crossword.getLegend(document.grid);
+      // display the svg with img tag
+      console.log(svg);
+      output.innerHTML = svg;
+      document.getElementById("output-raw").innerHTML = svg;
+      document.getElementById("legend").innerHTML = JSON.stringify(legend);
+    } catch(e) {
+      console.log(e);
+      document.getElementById("output").innerHTML = "Error: " + e;
+    }
+  }
+
+  window.addEventListener("load", svg);
+  </script>
+<html>
