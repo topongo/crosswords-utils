@@ -1,3 +1,16 @@
+/*
+  Crossword Puzzle Generator
+    By Matt Johnson (crosswordlabs.com)
+
+  DISCLAIMER: I don't own this code and I am not affiliated with the original author in any way.
+    They are the sole owner of this code, I should not take any credit for it. I am simply borrowing it
+    for personal use and to share with others as a convenience.
+
+    I highly incurage the usage and support of the original website https://crosswordlabs.com/
+    This repository in which this code is hosted should only be considered as a convenience to those
+    who want to tinker with the code, improve it and/or learn from it.
+*/
+
 function getSymbols(string) {
   try {
     string = string.normalize('NFC');
