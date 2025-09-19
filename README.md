@@ -1,9 +1,10 @@
 # Crosswords Utils
 ## Disclaimer
-Many thanks and credit to the index.js code must go to crosswordlabs.com.
+Many thanks for the index.js code, the credit goes all to the website https://crosswordlabs.com and their owners.
 
-If you prefer using a more friendly user interface I recommend heading to their website, it's surely more refined. Use this tool only if
-you plan to integrate it in a more nerdy/automated process like I used to do.
+If you prefer using a more friendly user interface I recommend heading to their website, it's surely more refined and deserves all the appreciation
+for the great algorithm and code.
+Use this tool only if you plan to integrate it in a more nerdy/automated process like I used it to.
 
 ## Quick tutorial:
 1. Write down your definitions, use CSV (comma-separated-values) format. Use double quotes for escaping eventual commas in your clues.
