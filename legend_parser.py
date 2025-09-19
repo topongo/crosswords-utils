@@ -5,5 +5,5 @@ data = load(stdin)
 
 for (l, k) in (("Orizzontali", "across"), ("Verticali", "down")):
     print(f"{l}:")
-    for (i, e) in enumerate(data[k], 1):
-        print(f"{i:2}. {e['clue']}")
+    for e in data[k]:
+        print(f"{e['position']:2}. {e['clue']}")
